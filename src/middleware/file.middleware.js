@@ -5,7 +5,7 @@ console.log('PICTURE_PATH: ', PICTURE_PATH);
 const pictureUpload = Multer({
   dest: PICTURE_PATH,
 })
-const pictureHandler = pictureUpload.array('picture', 9)
+const pictureHandler = pictureUpload.array('picture', 30)
 
 module.exports = {
   pictureHandler,

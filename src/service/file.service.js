@@ -1,9 +1,9 @@
 const connection = require('../app/database')
 
 class FileService {
-  async createFile(filename, mimetype, size) {
-    const statement = `INSERT INTO file (filename, mimetype, size) VALUES (?, ?, ?)`
-    const [result] = await connection.execute(statement, [filename, mimetype, size])
+  async createFile(filename, mimetype, size, type) {
+    const statement = `INSERT INTO file (filename, mimetype, size, type) VALUES (?, ?, ?, ?)`
+    const [result] = await connection.execute(statement, [filename, mimetype, size, type])
     return result
   }
   async getPicture(filename) {
@@ -11,9 +11,9 @@ class FileService {
     const [result] = await connection.execute(statement, [filename])
     return result
   }
-  async getPictures() {
-    const statement = `select * from file;`
-    const [result] = await connection.execute(statement)
+  async getPictures(type) {
+    const statement = `select * from file where type = ?;`
+    const [result] = await connection.execute(statement, [type])
     return result
   }
 }

@@ -7,11 +7,12 @@ class FileController {
   async savePictureInfo(ctx, next) {
     // 1.获取图像信息
     const files = ctx.req.files
+    const { type } = ctx.req.body
 
     // 2.将所有的文件信息保存到数据库中
     for (let file of files) {
       const { filename, mimetype, size } = file
-      await fileService.createFile(filename, mimetype, size)
+      await fileService.createFile(filename, mimetype, size, type)
     }
 
     ctx.body = '图片上传成功~'
@@ -25,7 +26,8 @@ class FileController {
   }
 
   async getPictures(ctx, next) {
-    const result = await fileService.getPictures(ctx, next)
+    const { type } = ctx.query
+    const result = await fileService.getPictures(type)
     const newRes = []
     for (let file of result) {
       newRes.push(fs.createReadStream(`${PICTURE_PATH}/${file.filename}`))
