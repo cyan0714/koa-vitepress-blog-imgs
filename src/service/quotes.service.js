@@ -2,7 +2,7 @@ const connection = require('../app/database')
 
 class QuotesService {
   async fetchOneQuote() {
-    const statement = `SELECT * FROM quotes ORDER BY RAND() LIMIT 1;`
+    const statement = `SELECT * FROM quotes ORDER BY RAND() LIMIT 3;`
     const [result] = await connection.execute(statement)
     return result
   }
