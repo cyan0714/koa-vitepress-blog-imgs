@@ -2,6 +2,8 @@
 
 这个项目是[vitepress-blog](https://github.com/cyan0714/vitepress-blog)个人博客和知识库的后台项目，使用非常优秀的 Node.js Koa2 框架做服务端 API 接口。该项目仅供学习使用。
 
+- [点击这里预览 vitepress-blog](http://1.12.218.227)
+
 ## 1.1.项目模块
 
 - 英雄语录模块
@@ -254,10 +256,3 @@ GET    /file/pictures
   ...
 ]
 ```
-
-### 1.3.项目展示
-
-- [点击这里预览](http://1.12.218.227)
-
-
-
