@@ -1,6 +1,6 @@
 # 一、项目介绍
 
-这个项目是[vitepress-blog](https://github.com/cyan0714/vitepress-blog)个人博客和知识库的后台项目，使用非常优秀的 Node.js Koa2 框架做服务端 API 接口。
+这个项目是[vitepress-blog](https://github.com/cyan0714/vitepress-blog)个人博客和知识库的后台项目，使用非常优秀的 Node.js Koa2 框架做服务端 API 接口。该项目仅供学习使用。
 
 ## 1.1.项目模块
 
@@ -186,16 +186,9 @@ GET    /file/pictures
 
 ## 二、使用项目
 
-### 2.1.克隆项目
-
-```
-git clone https://github.com/cyan0714/koa-vitepress-blog-server.git
-```
-
-### 2.2.项目架构
+### 2.1.项目架构
 
 ```iterm2
-.
 ├── imgs 项目中用到的图片
 ├── src *重点, 项目工程入口
     ├── app
@@ -224,27 +217,38 @@ git clone https://github.com/cyan0714/koa-vitepress-blog-server.git
 └── README.md
 ```
 
-### 2.3.启动项目
+### 2.2.准备
+
+```
+git clone https://github.com/cyan0714/koa-vitepress-blog-server.git
+```
+```
+cd koa-vitepress-blog-server
+npm install 或者 yarn install
+```
+
+### 2.3.创建数据库
+
+启动项目前一定要在创建好 `vitepress_blog` 数据库！！！
 
 在项目根目录下添加 .env 文件, 然后配置以下内容:
 
 ![upload](./imgs/1.png)
 
-以下是启动服务端项目的操作命令：
+其中 `MYSQL_PASSWORD` 为你数据库的密码
 
 ```
-# 进入项目根目录
+# 登录数据库
 
-cd koa-vitepress-blog-server
+mysql -uroot -p (回车然后输入你的本机数据库密码)
 
-# 安装依赖包
+# 导入 sql 文件
 
-npm install 或者 yarn install
+```
 
-# 启动 Node.js Koa2 项目
-
+### 2.4.启动项目
+```
 npm start 或者 yarn start
-
 ```
 
 
