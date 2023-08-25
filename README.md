@@ -76,7 +76,8 @@ npm install 或者 yarn install
 
 ![upload](./imgs/1.png)
 
-其中 `MYSQL_PASSWORD` 为你数据库的密码
+其中, 你需要更换`MYSQL_HOST`和`MYSQL_PASSWORD`为你本地或云服务器的地址
+
 
 ```
 # 登录数据库
