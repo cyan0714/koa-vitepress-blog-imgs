@@ -12,7 +12,7 @@ const storagePicture = Multer.diskStorage({
   }
 });
 const pictureUpload = Multer({ storage: storagePicture });
-const pictureHandler = pictureUpload.array('picture', 30)
+const pictureMiddleware = pictureUpload.array('picture', 30)
 
 
 const storageAttachment = Multer.diskStorage({
@@ -25,9 +25,9 @@ const storageAttachment = Multer.diskStorage({
   }
 });
 const attachmentUpload = Multer({ storage: storageAttachment });
-const attachmentHandler = attachmentUpload.array('attachment', 30)
+const attachmentMiddleware = attachmentUpload.array('attachment', 30)
 
 module.exports = {
-  pictureHandler,
-  attachmentHandler,
+  pictureMiddleware,
+  attachmentMiddleware,
 }
