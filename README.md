@@ -11,7 +11,7 @@
   - 图片、文件的下载
 - 持续更新...
 
-## 技术栈
+## 1.2.技术栈
 - koa2
 - koa-bodyparser
 - koa-multer
