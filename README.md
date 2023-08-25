@@ -4,6 +4,10 @@
 
 - [点击这里预览 vitepress-blog](http://1.12.218.227)
 
+vitepress-blog 首页
+
+![home](https://raw.githubusercontent.com/cyan0714/koa-vitepress-blog-server/master/imgs/home.png)
+
 ## 1.1.项目模块
 
 - 英雄语录模块
