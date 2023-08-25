@@ -11,7 +11,82 @@
   - 图片、文件的下载
 - 持续更新...
 
-## 1.2.接口文档
+## 技术栈
+- koa2
+- koa-bodyparser
+- koa-multer
+- koa-router
+- mysql2
+- dotenv
+
+# 二、使用项目
+
+## 2.1.项目架构
+
+```iterm2
+├── imgs 项目中用到的图片
+├── src *重点, 项目工程入口
+    ├── app
+        ├── config 配置相关
+        ├── database.js 数据库相关
+        ├── index.js 入口文件
+    ├── constants 常量
+        ├── file-path.js 图片和文件存储的路径
+    ├── controller 控制器
+        ├── file.controller.js
+        ├── quotes.controller.js
+    ├── middleware 中间件
+        ├── file.middleware.js
+    ├── router 路由
+        ├── file.router.js
+        ├── quotes.router.js
+        ├── index.js
+   ├── service 操作数据库的地方
+        ├── file.service.js
+        ├── quotes.service.js
+   ├── main.js 入口文件
+├── .env 配置文件(这个要自己加)
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
+
+## 2.2.准备
+
+```
+git clone https://github.com/cyan0714/koa-vitepress-blog-server.git
+```
+```
+cd koa-vitepress-blog-server
+npm install 或者 yarn install
+```
+
+## 2.3.创建数据库
+
+启动项目前一定要在创建好 `vitepress_blog` 数据库！！！
+
+在项目根目录下添加 .env 文件, 然后配置以下内容:
+
+![upload](./imgs/1.png)
+
+其中 `MYSQL_PASSWORD` 为你数据库的密码
+
+```
+# 登录数据库
+
+mysql -uroot -p (回车然后输入你的本机数据库密码)
+
+# 导入 sql 文件
+
+```
+
+## 2.4.启动项目
+```
+npm start 或者 yarn start
+```
+
+## 2.5.接口文档
 
 ### 随机获取 3 条语录
 
@@ -184,71 +259,5 @@ GET    /file/pictures
 
 - [点击这里预览](http://1.12.218.227)
 
-## 二、使用项目
-
-### 2.1.项目架构
-
-```iterm2
-├── imgs 项目中用到的图片
-├── src *重点, 项目工程入口
-    ├── app
-        ├── config 配置相关
-        ├── database.js 数据库相关
-        ├── index.js 入口文件
-    ├── constants 常量
-        ├── file-path.js 图片和文件存储的路径
-    ├── controller 控制器
-        ├── file.controller.js
-        ├── quotes.controller.js
-    ├── middleware 中间件
-        ├── file.middleware.js
-    ├── router 路由
-        ├── file.router.js
-        ├── quotes.router.js
-        ├── index.js
-   ├── service 操作数据库的地方
-        ├── file.service.js
-        ├── quotes.service.js
-   ├── main.js 入口文件
-├── .env 配置文件(这个要自己加)
-├── .gitignore
-├── package-lock.json
-├── package.json
-└── README.md
-```
-
-### 2.2.准备
-
-```
-git clone https://github.com/cyan0714/koa-vitepress-blog-server.git
-```
-```
-cd koa-vitepress-blog-server
-npm install 或者 yarn install
-```
-
-### 2.3.创建数据库
-
-启动项目前一定要在创建好 `vitepress_blog` 数据库！！！
-
-在项目根目录下添加 .env 文件, 然后配置以下内容:
-
-![upload](./imgs/1.png)
-
-其中 `MYSQL_PASSWORD` 为你数据库的密码
-
-```
-# 登录数据库
-
-mysql -uroot -p (回车然后输入你的本机数据库密码)
-
-# 导入 sql 文件
-
-```
-
-### 2.4.启动项目
-```
-npm start 或者 yarn start
-```
 
 
