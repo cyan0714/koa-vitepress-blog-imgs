@@ -184,14 +184,14 @@ POST    /file/upload/picture
 ### 上传附件
 
 ```
-POST    /file/upload/attchment
+POST    /file/upload/attachment
 ```
 
 #### 参数说明
 
 | 参数      | 说明                            | 是否必填 |
 | --------- | ------------------------------- | :------: |
-| attchment | 固定, content-type 为 form-data |    是    |
+| attachment | 固定, content-type 为 form-data |    是    |
 | type      | 英雄名                          |    是    |
 
 如:
